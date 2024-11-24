@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Detection with Sound</title>
+    <title>Device Detection with Sound Up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,10 +13,26 @@
         .device-message {
             font-size: 24px;
             color: #333;
-            transition: transform 1s ease-in-out;
         }
-        .animate {
-            transform: translateY(-30px);
+
+        /* Dit is voor de animatie van het geluid */
+        .animate-sound {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            animation: soundMoveUp 2s forwards;
+        }
+
+        @keyframes soundMoveUp {
+            0% {
+                bottom: 0;
+                opacity: 1;
+            }
+            100% {
+                bottom: 100px; /* Geluid 'beweegt' omhoog */
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -33,6 +49,7 @@
         <!-- Device-specific message will appear here -->
     </div>
 
+    <!-- Het geluid dat we willen afspelen -->
     <audio id="soundEffect" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
@@ -41,7 +58,11 @@
             const userAgent = navigator.userAgent.toLowerCase();
             const deviceMessage = document.getElementById('deviceMessage');
             const soundEffect = document.getElementById('soundEffect');
+            const soundContainer = document.createElement('div');
+            soundContainer.classList.add('animate-sound');
+            document.body.appendChild(soundContainer);  // Voeg het animatie-container toe aan de body
 
+            // Zet het bericht op basis van het gedetecteerde apparaat
             if (/android/i.test(userAgent)) {
                 deviceMessage.innerHTML = "You are using an Android device!";
             } else if (/iphone|ipad|ipod/i.test(userAgent)) {
@@ -56,16 +77,12 @@
                 deviceMessage.innerHTML = "Device detection failed!";
             }
 
-            // Play the sound when device is detected
+            // Speel het geluid af en voeg de animatie toe
             soundEffect.play();
-
-            // Add animation to make the text move up
-            setTimeout(() => {
-                deviceMessage.classList.add('animate');
-            }, 100);
+            soundContainer.style.animationPlayState = 'running';  // Start de animatie
         }
 
-        // Call the function to detect the device
+        // Voer de detectie uit bij het laden van de pagina
         detectDevice();
     </script>
 
