@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe); 
+    background-color: #001f3f; /* donkerblauwe achtergrond */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -38,7 +38,7 @@ a:hover {
 .device-message {
     font-size: 1.5rem;
     margin-top: 30px;
-    color: #fff;
+    color: #aaa; /* grijs gemaakt zoals gevraagd */
 }
 
 .animate-sound {
