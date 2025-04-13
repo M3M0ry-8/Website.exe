@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Detection with Sound Up</title>
+    <title>Device Detection</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Hello, world</h1>
     <h2>Hello there</h2>
-    <img src="https://media.tenor.com/qmH6Y4Cf-B0AAAAi/penguin.gif" alt="Flying Penguin" class="penguin">
+    <img src="https://1000logos.net/wp-content/uploads/2017/03/Linux-logo.jpg" alt="Flying Penguin" class="penguin">
 
 
     <a href="https://bit.ly/3BlS71b" target="_self" title="You'll have to find out where it takes you😉">
@@ -17,8 +17,6 @@
     </a>
 
     <div id="deviceMessage" class="device-message"></div>
-
-    <audio id="soundEffect" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
         function detectDevice() {
@@ -43,8 +41,6 @@
                 deviceMessage.innerHTML = "Device detection failed!";
             }
 
-            soundEffect.play();
-            soundContainer.style.animationPlayState = 'running'; 
         }
 
         detectDevice();
