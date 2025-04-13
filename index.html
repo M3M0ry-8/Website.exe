@@ -4,52 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Device Detection with Sound Up</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .device-message {
-            font-size: 24px;
-            color: #333;
-        }
-
-        .animate-sound {
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            animation: soundMoveUp 2s forwards;
-        }
-
-        @keyframes soundMoveUp {
-            0% {
-                bottom: 0;
-                opacity: 1;
-            }
-            100% {
-                bottom: 100px; 
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Hello, world</h1>
-    <h2>Hello there </h2>
+    <h2>Hello there</h2>
 
     <a href="https://bit.ly/3BlS71b" target="_self" title="You'll have to find out where it takes you😉">
         Click me!
     </a>
 
-    <div id="deviceMessage" class="device-message">
-       
-    </div>
+    <div id="deviceMessage" class="device-message"></div>
+
     <audio id="soundEffect" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
-    
         function detectDevice() {
             const userAgent = navigator.userAgent.toLowerCase();
             const deviceMessage = document.getElementById('deviceMessage');
@@ -58,7 +27,6 @@
             soundContainer.classList.add('animate-sound');
             document.body.appendChild(soundContainer); 
 
-          
             if (/android/i.test(userAgent)) {
                 deviceMessage.innerHTML = "You are using an Android device!";
             } else if (/iphone|ipad|ipod/i.test(userAgent)) {
@@ -73,13 +41,11 @@
                 deviceMessage.innerHTML = "Device detection failed!";
             }
 
-          
             soundEffect.play();
             soundContainer.style.animationPlayState = 'running'; 
         }
 
         detectDevice();
     </script>
-
 </body>
 </html>
