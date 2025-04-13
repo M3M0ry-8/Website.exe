@@ -79,6 +79,7 @@ a:hover {
         transform: translateX(0) rotate(0deg);
     }
     100% {
-        transform: translateX(120vw) rotate(360deg);
+        transform: translateX(130vw) rotate(720deg); /* iets verder + meer draai */
     }
 }
+
