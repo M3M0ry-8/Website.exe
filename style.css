@@ -64,14 +64,13 @@ a:hover {
         opacity: 0;
         transform: translateX(-50%) scale(2);
     }
-}
-
 .penguin {
     position: absolute;
     top: 100px;
-    left: -150px;
-    width: 100px;
-    animation: flyPenguin 8s linear infinite;
+    left: -100px;
+    width: 120px;
+    height: auto;
+    animation: flyPenguin 10s linear infinite;
     z-index: 10;
 }
 
