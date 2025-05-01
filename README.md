@@ -1,6 +1,7 @@
 <h3>Hi everyone This is a lil website i created to test my html and css check it out!</h3>
-<code>https://m3m0ry-8.github.io/Website.exe/</code>
-
+https://m3m0ry-8.github.io/Website.exe/
+<code>You'll have to find out what the website says!!!!!!
+;))))))))))))))))</code>
 
 
 
